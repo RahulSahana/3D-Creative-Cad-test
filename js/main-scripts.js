@@ -48,26 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Run once on load to set the correct initial header state
     handleScrollEvents();
 
-    // --- 3. ADMIN LOGIN MODAL LOGIC ---
-    const ADMIN_EMAIL = "suman@koley.com";
-    const ADMIN_PASS = "password123";
-
-    if (adminLoginBtn && adminModalOverlay && closeModalBtn) {
-        adminLoginBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            adminModalOverlay.classList.remove('hidden');
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            adminModalOverlay.classList.add('hidden');
-        });
-
-        adminModalOverlay.addEventListener('click', (e) => {
-            if (e.target === adminModalOverlay) {
-                adminModalOverlay.classList.add('hidden');
-            }
-        });
-    }
+    
 
     if (adminLoginForm) {
         adminLoginForm.addEventListener('submit', (e) => {
