@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collections - Suman Koley Jewelry</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Main & Collections CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/collections.css">
+    <link rel="stylesheet" href="css/preloader-fixes.css">
+</head>
+<body>
+
+     <!-- ==================== DNA PRELOADER START ==================== 
+    <div id="dna-preloader">
+        <div class="dna-loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div> -->
+    <!-- ==================== DNA PRELOADER END ==================== -->
+
+    <header id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Suman Koley</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collections.html">Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="service-rendering.html">Jewelry Rendering</a>
+                            <a href="service-animation.html">360° Animation</a>
+                            <a href="service-cad.html">CAD Design</a>
+                            <a href="service-retouching.html">Photo Retouching</a>
+                        </div>
+                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="admin-login-btn">Admin</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="animated-branch"></div>
+    </header>
+
+    <main>
+        <!-- Collections Hero Section -->
+        <section class="collections-hero">
+            <div class="collections-hero-content">
+                <h1>Our Collections</h1>
+                <p>Explore handcrafted pieces designed with passion and precision.</p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="collection-gallery" class="content-section">
+            <div class="container">
+                <h2>Timeless Creations</h2>
+                <p class="section-subtitle">Each piece tells a story of elegance and artistry, crafted from ethically sourced materials. Find the one that speaks to you.</p>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="rings">Rings</button>
+                    <button class="filter-btn" data-filter="necklaces">Necklaces</button>
+                    <button class="filter-btn" data-filter="earrings">Earrings</button>
+                    <button class="filter-btn" data-filter="bracelets">Bracelets</button>
+                </div>
+                <div class="collection-grid">
+                    <!-- Item 1 -->
+                    <div class="collection-item" data-category="rings">
+                        <div class="image-container">
+                            <img src="assets/images/gallery/ring_solitaire-placeholder.jpg" 
+                                data-src="assets/images/gallery/ring_solitaire.webp" 
+                                alt="Solitaire Diamond Ring" 
+                                class="lazy-image" 
+                                loading="lazy">
+                        </div>
+                        <div class="item-info">
+                            <h3>Solitaire Ring</h3>
+                            <p>A classic brilliant-cut diamond set in a platinum band.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="collection-item" data-category="necklaces">
+                        <div class="image-container">
+                            <img src="assets/images/gallery/necklace_pearl-placeholder.jpg" 
+                                data-src="assets/images/gallery/necklace_pearl.webp" 
+                                alt="Pearl Pendant Necklace" 
+                                class="lazy-image" 
+                                loading="lazy">
+                        </div>
+                        <div class="item-info">
+                            <h3>Pearl Pendant</h3>
+                            <p>Lustrous freshwater pearl on a delicate 18k gold chain.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="collection-item" data-category="earrings">
+                        <div class="image-container">
+                            <img src="assets/images/gallery/earrings_hoop-placeholder.jpg" 
+                                data-src="assets/images/gallery/earrings_hoop.webp" 
+                                alt="Gold Hoop Earrings" 
+                                class="lazy-image" 
+                                loading="lazy">
+                        </div>
+                        <div class="item-info">
+                            <h3>Gold Hoops</h3>
+                            <p>Timeless and versatile hoops, perfect for any occasion.</p>
+                        </div>
+                    </div>
+
+                    <!--  Item 4  -->
+                    <div class="collection-item" data-category="bracelets">
+                        <div class="image-container">
+                            <img src="assets/images/gallery/bracelet_cuff-placeholder.jpg" 
+                                data-src="assets/images/gallery/bracelet_cuff.webp" 
+                                alt="Silver Cuff Bracelet" 
+                                class="lazy-image" 
+                                loading="lazy">
+                        </div>
+                        <div class="item-info">
+                            <h3>Silver Cuff</h3>
+                            <p>A bold, handcrafted cuff with hammered detailing.</p>
+                        </div>
+                    </div>
+
+                    <!--  Item 5  -->
+                    <div class="collection-item" data-category="rings">
+                        <div class="image-container">
+                            <img src="assets/images/gallery/ring_emerald-placeholder.jpg" 
+                                data-src="assets/images/gallery/ring_emerald.webp" 
+                                alt="Emerald Cut Ring" 
+                                class="lazy-image" 
+                                loading="lazy">
+                        </div>
+                        <div class="item-info">
+                            <h3>Emerald Ring</h3>
+                            <p>A stunning emerald-cut gemstone with a diamond halo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6  -->
+                    <div class="collection-item" data-category="necklaces">
+                        <div class="image-container">
+                            <img src="assets/images/gallery/necklace_locket-placeholder.jpg" 
+                                data-src="assets/images/gallery/necklace_locket.webp" 
+                                alt="Vintage Locket Necklace" 
+                                class="lazy-image" 
+                                loading="lazy">
+                        </div>
+                        <div class="item-info">
+                            <h3>Vintage Locket</h3>
+                            <p>An intricate, gold-plated locket for treasured memories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- You can add your contact or other sections here as well -->
+    </main>
+    
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <!-- Footer section   -->
+    <footer class="dark-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="payment-methods">
+                    <p>We Accept:</p>
+                    <img src="assets/images/visa.svg" alt="Visa">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard">
+                    <img src="assets/images/rupay.svg" alt="Rupay">
+                    <img src="assets/images/upi.svg" alt="UPI">
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 3D Creative Cad | All rights reserved.</p>
+                    <p>All pieces are handcrafted with ethically sourced materials.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main-scripts.js"></script>
+    <script src="js/collections.js"></script> 
+</body>
+</html>

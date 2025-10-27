@@ -1,0 +1,227 @@
+/* --- Preloader Styles --- */
+:root {
+    --gold: #C1A25A;
+    --charcoal: #222222;
+    --beige: #E3DCC3;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--charcoal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#preloader.preloader-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.preloader-content {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Brand Name --- */
+.brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--beige);
+    margin-bottom: 2rem;
+}
+
+.brand-name span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInStagger 0.5s forwards;
+}
+/* Staggered fade-in delays */
+.brand-name span:nth-child(1) { animation-delay: 0.1s; }
+.brand-name span:nth-child(2) { animation-delay: 0.2s; }
+.brand-name span:nth-child(3) { animation-delay: 0.3s; }
+.brand-name span:nth-child(4) { animation-delay: 0.4s; }
+.brand-name span:nth-child(5) { animation-delay: 0.5s; margin-right: 0.5em; }
+.brand-name span:nth-child(6) { animation-delay: 0.6s; }
+.brand-name span:nth-child(7) { animation-delay: 0.7s; }
+.brand-name span:nth-child(8) { animation-delay: 0.8s; }
+.brand-name span:nth-child(9) { animation-delay: 0.9s; }
+
+/* --- Gem and Rings --- */
+.gem-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diamond {
+    width: 70px;
+    height: 70px;
+    background-color: var(--beige);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    position: relative;
+    animation: pulseGlow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.diamond-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.ring {
+    position: absolute;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.ring:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    animation: rotate3D 5s infinite linear;
+}
+
+.ring:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    animation: rotate3D 8s infinite linear reverse;
+}
+
+/* --- Sparkles --- */
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatSparkle 3s infinite ease-in-out;
+}
+
+.sparkle::before, .sparkle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gold);
+    border-radius: 50%;
+}
+.sparkle::before { transform: scale(1.5, 0.2); }
+.sparkle::after { transform: scale(0.2, 1.5); }
+
+
+.sparkle:nth-child(4) { top: 10%; left: 10%; animation-delay: 0s; }
+.sparkle:nth-child(5) { top: 20%; left: 80%; animation-delay: 0.5s; }
+.sparkle:nth-child(6) { top: 80%; left: 90%; animation-delay: 1s; }
+.sparkle:nth-child(7) { top: 70%; left: 15%; animation-delay: 1.5s; }
+
+/* --- Progress Bar --- */
+.progress-bar {
+    width: 250px;
+    height: 8px;
+    background-color: rgba(227, 220, 195, 0.2);
+    border-radius: 4px;
+    margin: 1.5rem auto 0.5rem auto;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--beige), var(--gold));
+    background-size: 200% 100%;
+    border-radius: 4px;
+    transition: width 0.2s linear;
+    animation: shimmer 2s infinite linear;
+}
+
+.progress-text {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+/* --- Background Particles --- */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background-color: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatParticle 10s infinite ease-in-out;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes fadeInStagger {
+    to { opacity: 1; }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold);
+    }
+}
+
+@keyframes rotate3D {
+    from { transform: rotateY(0deg) rotateX(20deg); }
+    to { transform: rotateY(360deg) rotateX(20deg); }
+}
+
+@keyframes floatSparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    20% { opacity: 0.7; }
+    80% { opacity: 0.7; }
+    100% {
+        transform: translateY(-100vh) translateX(var(--x-end));
+        opacity: 0;
+    }
+}

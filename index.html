@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suman Koley - Handcrafted Jewelry Portfolio</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/preloader-fixes.css">
+
+</head>
+<body>
+    <!-- ==================== PRELOADER START ==================== -->
+    <div id="preloader">
+        <div class="particles-container"></div>
+        <div class="preloader-content">
+            <div class="gem-container">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="diamond">
+                    <div class="diamond-reflection"></div>
+                </div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+            </div>
+            <div class="brand-name">
+                <span>S</span><span>u</span><span>m</span><span>a</span><span>n</span>
+                <span>K</span><span>o</span><span>l</span><span>e</span><span>y</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <div class="progress-text">0%</div>
+        </div>
+    </div>
+    <!-- ==================== PRELOADER END ==================== -->
+
+    <!-- This header is now populated dynamically by js/main.js -->
+    <header id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Suman Koley</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collections.html">Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="service-rendering.html">Jewelry Rendering</a>
+                            <a href="service-animation.html">360° Animation</a>
+                            <a href="service-cad.html">CAD Design</a>
+                            <a href="service-retouching.html">Photo Retouching</a>
+                        </div>
+                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="admin-login-btn">Admin</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="animated-branch"></div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <!-- Video Background -->
+            <div class="hero-video-container">
+                <video autoplay loop muted playsinline poster="assets/images/hero-bg.jpg">
+                    <source src="assets/videos/hero-loop.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="hero-content">
+                <h1>Timeless Handcrafted Jewelry</h1>
+                <p>Designed with passion by Suman Koley</p>
+                <div class="hero-buttons">
+                    <a href="collections.html" class="btn btn-primary">View My Collection</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <a href="#collection" class="scroll-down-indicator" aria-label="Scroll to collection">
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- Collection Preview Section -->
+        <section id="collection" class="content-section">
+            <div class="container">
+                <h2>Featured Collection</h2>
+                <p class="section-subtitle">Each piece is handcrafted with intention and attention to detail. Here is a glimpse of the timeless beauty you can discover.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="assets/images/ring1.jpg" alt="Silver engagement ring"></div>
+                    <div class="gallery-item"><img src="assets/images/necklace1.jpg" alt="Delicate gold necklace"></div>
+                    <div class="gallery-item"><img src="assets/images/earring1.jpg" alt="Pearl hoop earrings"></div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="collections.html" class="btn btn-primary">Explore All Collections</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="content-section">
+            <div class="container about-container">
+                <div class="about-image">
+                    <img src="assets/images/about-me.jpg" alt="Jewelry making tools and materials">
+                </div>
+                <div class="about-text">
+                    <h3>About Me</h3>
+                    <p>Welcome to my world of custom jewelry! I'm a creator of personalized, fine jewelry. My mission is to create pieces that become part of your story, passed down through generations.</p>
+                    <p>With over 10 years of experience, I combine traditional techniques with modern aesthetics. Every piece is meticulously crafted, prioritizing ethically sourced materials and eco-friendly practices.</p>
+                    <h4>My Creative Process</h4>
+                    <div class="process-steps">
+                        <div class="step"><div class="step-icon"><i class="fa-solid fa-comments"></i></div><span>Inquiry</span></div>
+                        <div class="step"><div class="step-icon"><i class="fa-solid fa-gem"></i></div><span>Design</span></div>
+                        <div class="step"><div class="step-icon"><i class="fa-solid fa-hammer"></i></div><span>Creation</span></div>
+                        <div class="step"><div class="step-icon"><i class="fa-solid fa-star"></i></div><span>Results</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Design Section -->
+        <section id="custom-design" class="content-section">
+            <div class="container">
+                <h2>Design Your Dream Piece</h2>
+                <p class="section-subtitle">Have a unique vision? Let's bring it to life together. Fill out the form below and I'll create a custom piece just for you.</p>
+                <form id="custom-design-form" class="design-form">
+                    <div class="form-row">
+                        <div class="form-group"><label for="name">Your Name*</label><input type="text" id="name" name="name" placeholder="Enter your name" required></div>
+                        <div class="form-group"><label for="email">Email Address*</label><input type="email" id="email" name="email" placeholder="your.email@example.com" required></div>
+                    </div>
+                    <div class="form-group"><label for="vision">Tell me about your vision*</label><textarea id="vision" name="vision" rows="5" placeholder="Describe your dream piece. What's the occasion? Any specific design elements you'd like to include?" required></textarea></div>
+                    <button type="submit" class="btn btn-primary">Submit Custom Design Request</button>
+                    <p class="required-note">*Required Fields</p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="content-section">
+            <div class="container">
+                <h2>What My Clients Say</h2>
+                <p class="section-subtitle">Don't just take my word for it. Here's what my valued clients have to say about their experience.</p>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"The custom engagement ring was stunning! Every detail was thoughtfully crafted. I couldn't have asked for a more beautiful piece."</p>
+                        <div class="author"><img src="assets/images/client1.jpg" alt="Sarah Mitchell"><div><strong>Sarah Mitchell</strong><span>Bride</span></div></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"I've purchased three pieces now and they are all breathtaking. The quality and craftsmanship are unmatched. These pieces are heirlooms in the making!"</p>
+                        <div class="author"><img src="assets/images/client2.jpg" alt="Emily Rodriguez"><div><strong>Emily Rodriguez</strong><span>Collector</span></div></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"I commissioned a necklace for my mother's birthday. The experience and attention to detail made it truly special. Highly recommended!"</p>
+                        <div class="author"><img src="assets/images/client3.jpg" alt="Jessica Lee"><div><strong>Jessica Lee</strong><span>Gift Giver</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" class="content-section">
+            <div class="container">
+                <h2>Leave Your Feedback</h2>
+                <p class="section-subtitle">Loved your piece? Share your experience to help us improve and inspire others.</p>
+                <form id="feedback-form" class="feedback-form">
+                    <div class="form-group"><label>How would you rate your experience?</label>
+                        <div class="star-rating">
+                            <input type="radio" id="5-stars" name="rating" value="5" /><label for="5-stars" class="fa fa-star"></label>
+                            <input type="radio" id="4-stars" name="rating" value="4" /><label for="4-stars" class="fa fa-star"></label>
+                            <input type="radio" id="3-stars" name="rating" value="3" /><label for="3-stars" class="fa fa-star"></label>
+                            <input type="radio" id="2-stars" name="rating" value="2" /><label for="2-stars" class="fa fa-star"></label>
+                            <input type="radio" id="1-star" name="rating" value="1" required /><label for="1-star" class="fa fa-star"></label>
+                        </div>
+                    </div>
+                    <div class="form-group"><label for="feedback-name">Your Name (Optional)</label><input type="text" id="feedback-name" name="name" placeholder="Enter your name"></div>
+                    <div class="form-group"><label for="feedback-message">Your Feedback</label><textarea id="feedback-message" name="message" rows="5" placeholder="Tell us what you think..." required></textarea></div>
+                    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="dark-section">
+            <div class="container contact-container">
+                <div class="contact-form-wrapper">
+                    <h3>Send Me a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group"><label for="contact-name">Name</label><input type="text" id="contact-name" name="name" placeholder="Your name" required></div>
+                        <div class="form-group"><label for="contact-email">Email</label><input type="email" id="contact-email" name="email" placeholder="your.email@example.com" required></div>
+                        <div class="form-group"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your inquiry..." required></textarea></div>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info-wrapper">
+                    <div class="info-card"><h4>Connect With Me</h4>
+                        <a href="#" class="contact-link"><div class="contact-icon"><i class="fab fa-instagram"></i></div><div><strong>Instagram</strong><span>@sumankoley_jewelry</span></div></a>
+                        <a href="#" class="contact-link"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><div><strong>WhatsApp</strong><span>+91 12345 67890</span></div></a>
+                        <a href="#" class="contact-link"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><strong>Email</strong><span>contact@sumankoley.com</span></div></a>
+                    </div>
+                    <div class="info-card"><h4>Studio Hours</h4><p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: By Appointment Only</p></div>
+                    <div class="info-card"><h4>Location</h4><p>123 Jewelry Lane<br>Design District<br>Kolkata, West Bengal<br>India</p></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- This footer is now populated dynamically by js/main.js -->
+    <footer class="dark-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="payment-methods">
+                    <p>We Accept:</p>
+                    <img src="assets/images/visa.svg" alt="Visa">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard">
+                    <img src="assets/images/rupay.svg" alt="Rupay">
+                    <img src="assets/images/upi.svg" alt="UPI">
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 3D Creative Cad | All rights reserved.</p>
+                    <p>All pieces are handcrafted with ethically sourced materials.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== ADMIN LOGIN MODAL START ==================== -->
+    <div id="admin-modal-overlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn">&times;</button>
+            <h3>Admin Login</h3>
+            <p class="modal-subtitle">Please enter your credentials to access the dashboard.</p>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-email">Email Address</label>
+                    <input type="email" id="admin-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p id="login-error-msg" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+    <!-- ==================== ADMIN LOGIN MODAL END ==================== -->
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- All JavaScript files (Order is important) -->
+    <script src="js/supabase-init.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/main-scripts.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Suman Koley Jewelry</title>
+    <!-- Common links -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/preloader-fixes.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="admin-dashboard">
+        <div class="container">
+            <h1>Admin Dashboard</h1>
+            <div class="tabs">
+                <button class="tab-link active" data-tab="upload">Upload Designs</button>
+                <button class="tab-link" data-tab="orders">View Booking Requests</button>
+            </div>
+
+            <!-- Upload Tab -->
+            <div id="upload" class="tab-content active">
+                <h2>Upload New Design</h2>
+                <form id="upload-form">
+                    <!-- ... same upload form as before ... -->
+                    <div class="form-group">
+                        <label for="item-title">Title</label>
+                        <input type="text" id="item-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="item-description">Description</label>
+                        <textarea id="item-description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="item-category">Category</label>
+                        <select id="item-category" required>
+                             <option value="" disabled selected>-- Select a Category --</option>
+                            <option value="rings">Rings</option>
+                            <option value="necklaces">Necklaces</option>
+                            <option value="earrings">Earrings</option>
+                            <option value="bracelets">Bracelets</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="item-image">Image</label>
+                        <input type="file" id="item-image" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn" id="upload-button">Upload</button>
+                    <p id="upload-status"></p>
+                </form>
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="orders" class="tab-content">
+                <h2>Booking Requests</h2>
+                <div id="orders-list">
+                    <p>Loading requests...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="dark-section"></footer>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-init.js"></script>
+    <script src="js/main-scripts.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
+

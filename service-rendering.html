@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Rendering Services - Suman Koley</title>
+    
+    <!-- Shared Styles -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dna-preloader.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/preloader-fixes.css">
+</head>
+<body>
+
+    <!-- Static Header (same across all pages) -->
+    <header id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Suman Koley</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collections.html">Collection</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="drop-btn">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="service-rendering.html">Jewelry Rendering</a>
+                            <a href="service-animation.html">360° Animation</a>
+                            <a href="service-cad.html">CAD Design</a>
+                            <a href="service-retouching.html">Photo Retouching</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#" id="admin-login-btn">Admin</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" aria-label="Open Navigation Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Service Hero Section -->
+        <section class="service-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/hero-rendering.jpg');">
+            <div class="container">
+                <h1>Photorealistic Jewelry Rendering</h1>
+                <p class="service-hero-subtitle">Bringing Your Designs to Life with Stunning, Lifelike Visuals</p>
+            </div>
+        </section>
+
+        <!-- Service Details Section -->
+        <section class="service-details content-section">
+            <div class="container service-details-container">
+                <div class="service-text">
+                    <h2>Transform Concepts into Masterpieces</h2>
+                    <p>Our photorealistic rendering service turns your CAD models into breathtaking, high-resolution images that are indistinguishable from professional photographs. We focus on every detail—from the precise faceting of gemstones to the subtle textures of metals—to create visuals that captivate your audience and drive sales.</p>
+                    <h3>Our Process Includes:</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Advanced material texturing (gold, silver, platinum).</li>
+                        <li><i class="fa-solid fa-check"></i> Realistic gemstone rendering (diamonds, emeralds, rubies).</li>
+                        <li><i class="fa-solid fa-check"></i> Professional lighting and studio setups.</li>
+                        <li><i class="fa-solid fa-check"></i> High-resolution output for print and web.</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="assets/images/rendering-detail.jpg" alt="Detailed render of a diamond ring">
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Gallery Section -->
+        <section class="service-gallery content-section">
+            <div class="container">
+                <h2>Rendering Showcase</h2>
+                <div class="gallery-grid-services">
+                    <img src="assets/images/render1.jpg" alt="Rendered Gold Necklace">
+                    <img src="assets/images/render2.jpg" alt="Rendered Diamond Earrings">
+                    <img src="assets/images/render3.jpg" alt="Rendered Sapphire Ring">
+                    <img src="assets/images/render4.jpg" alt="Rendered Platinum Bracelet">
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="service-cta">
+            <div class="container">
+                <h2>Have a Project in Mind?</h2>
+                <p>Let's discuss how our rendering services can elevate your collection.</p>
+                <a href="index.html#contact" class="btn btn-primary">Get a Free Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER (WAS MISSING) ==================== -->
+    <footer class="dark-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="payment-methods">
+                    <p>We Accept:</p>
+                    <img src="assets/images/visa.svg" alt="Visa">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard">
+                    <img src="assets/images/rupay.svg" alt="Rupay">
+                    <img src="assets/images/upi.svg" alt="UPI">
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 Suman Koley Jewelry | All rights reserved.</p>
+                    <p>All pieces are handcrafted with ethically sourced materials.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== ADMIN LOGIN MODAL (WAS MISSING) ==================== -->
+    <div id="admin-modal-overlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn">&times;</button>
+            <h3>Admin Login</h3>
+            <p class="modal-subtitle">Please enter your credentials to access the dashboard.</p>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-email">Email Address</label>
+                    <input type="email" id="admin-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p id="login-error-msg" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main-scripts.js"></script>
+
+</body>
+</html>
+
