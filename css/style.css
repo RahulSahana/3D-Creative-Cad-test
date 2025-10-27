@@ -183,33 +183,6 @@ h4 { font-size: 1.2rem; }
 }
 
 
-
-/* --- ANIMATED BRANCH STYLES --- */
-#animated-branch {
-    position: absolute; /* Positions it relative to the header */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* This is the key: places it BEHIND the logo and nav links */
-    z-index: -1; 
-    
-    /* Set the branch SVG as the background image */
-    background-image: url('../assets/images/branch.svg');
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-size: cover;
-    
-    /* Use a mask to "reveal" the branch */
-    mask-image: linear-gradient(to right, black 100%, transparent 100%);
-    mask-repeat: no-repeat;
-    mask-size: 0% 100%; /* Initially, the mask is 0% wide, hiding the branch */
-    
-    pointer-events: none; /* Makes it unclickable */
-    transition: mask-size 0.05s linear;
-}
-
 /* --- HERO SECTION --- */
 #hero {
     height: 100vh;

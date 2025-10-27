@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainNav = document.querySelector('.main-nav');
 
     // --- 1. PRELOADER LOGIC ---
-    // Hide the preloader once all content (including images) is fully loaded.
-    window.onload = () => {
+
+    // Function to handle hiding the preloader
+    const hidePreloader = () => {
         if (preloader) {
             preloader.classList.add('preloader-hidden');
             preloader.addEventListener('transitionend', () => {
@@ -20,6 +21,41 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     };
+
+    // Check if we are on the homepage (index.html or root path)
+    const path = window.location.pathname;
+    const isHomePage = (path === '/' || path.endsWith('index.html'));
+
+    if (isHomePage && preloader) {
+        // --- Homepage: Run simulated progress animation ---
+        const progressBarFill = document.querySelector('.progress-bar-fill');
+        const progressText = document.querySelector('.progress-text');
+        let progress = 0;
+
+        // Ensure progress elements exist before starting interval
+        if (progressBarFill && progressText) {
+            const interval = setInterval(() => {
+                progress += 1;
+                progressBarFill.style.width = `${progress}%`;
+                progressText.textContent = `${progress}%`;
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    // Wait a moment after 100% before fading
+                    setTimeout(hidePreloader, 400); 
+                }
+            }, 10); // ~3 seconds total
+        } else {
+             // Fallback: hide preloader immediately if elements are missing
+             hidePreloader();
+        }
+
+    } else if (preloader) {
+        // --- Other Pages: Wait for full load (window.onload) ---
+        // This is the part your code was stuck in.
+        // Now it will only run on internal pages.
+        window.onload = hidePreloader;
+    }
 
     // --- 2. SCROLL-BASED EVENTS HANDLER ---
     function handleScrollEvents() {
@@ -34,37 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
             header.classList.remove('scrolled');
         }
 
-        // b) Branch "Growing" Animation (only runs if the branch element exists)
-        if (animatedBranch) {
-            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollFraction = scrollableHeight > 0 ? scrollTop / scrollableHeight : 0;
-            const scrollPercent = Math.min(1, scrollFraction) * 100;
-            animatedBranch.style.maskSize = `${scrollPercent}% 100%`;
-        }
     }
 
     // Attach the scroll event listener
     window.addEventListener('scroll', handleScrollEvents);
     // Run once on load to set the correct initial header state
-    handleScrollEvents();
-
-    
-
-    if (adminLoginForm) {
-        adminLoginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('admin-email').value;
-            const password = document.getElementById('admin-password').value;
-            const errorMsg = document.getElementById('login-error-msg');
-            errorMsg.textContent = ''; // Clear previous errors
-
-            if (email === ADMIN_EMAIL && password === ADMIN_PASS) {
-                window.location.href = 'admin.html';
-            } else {
-                errorMsg.textContent = 'Invalid credentials. Please try again.';
-            }
-        });
-    }
+    handleScrollEvents()
     
     // --- 4. MOBILE MENU TOGGLE ---
     if(menuToggle && mainNav) {

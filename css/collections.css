@@ -2,11 +2,56 @@
 
 /* Hero Section */
 .collections-hero {
-    padding: 10rem 0 5rem 0;
+    height: 50vh;
+    color: var(--color-text-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/collections_hero.jpg') no-repeat center center/cover;
-    color: #fff;
+    position: relative;
+    overflow: hidden; 
 }
+
+/* New styles for the video container and video element */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+
+/* This creates the dark overlay on top of the video */
+.hero-video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(206, 203, 203, 0.5);
+}
+
+.hero-video-container video {
+    width: 100%;
+    height: 99%;
+    object-fit:scale-down; 
+    background-color: #fff;
+    border-style:double;
+    
+}
+.hero-video-container video :focus {
+    outline: none;
+}
+
+/* Ensure content and scroll indicator are on top of the video */
+.hero-content, .scroll-down-indicator {
+    position: relative;
+    z-index: 2;
+}
+
 
 .collections-hero h1 {
     font-size: 3.5rem;
