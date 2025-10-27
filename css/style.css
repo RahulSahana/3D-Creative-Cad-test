@@ -515,32 +515,38 @@ h4 { font-size: 1.2rem; }
 .author strong { display: block; }
 .author span { color: #888; font-size: 0.9rem; }
 
-/* --- CONTACT SECTION --- */
+/* --- NEW CONTACT SECTION STYLES --- */
 #contact {
     padding: 6rem 0;
 }
 
-.contact-container {
+.contact-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr; /* Give form more space */
+    grid-template-columns: 1.5fr 1fr; /* Form takes more space */
     gap: 4rem;
     align-items: flex-start;
 }
 
-.contact-form-wrapper h3, .info-card h4 {
+.contact-form-column h3, 
+.contact-details-column .info-card h4 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: var(--color-gold); /* Changed to gold for consistency */
+    color: var(--color-gold);
 }
 
-.contact-form-wrapper .form-group label {
+/* Styles for the main contact form */
+.contact-form-main .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     color: #ccc;
     font-size: 0.9rem;
 }
+.contact-form-main .form-group {
+     margin-bottom: 1.5rem;
+}
 
-.contact-form-wrapper input, .contact-form-wrapper textarea {
+.contact-form-main input, 
+.contact-form-main textarea {
     background: #2a2a2a;
     border: 1px solid #444;
     color: #fff;
@@ -550,136 +556,203 @@ h4 { font-size: 1.2rem; }
     font-family: var(--font-body);
 }
 
-.contact-form-wrapper input::placeholder, .contact-form-wrapper textarea::placeholder {
+.contact-form-main input::placeholder, 
+.contact-form-main textarea::placeholder {
     color: #777;
 }
 
-.contact-form-wrapper .btn i {
+.contact-form-main .btn {
+    width: 100%;
+}
+
+.contact-form-main .btn i {
     margin-right: 8px;
 }
 
-/* Right column info cards (UPDATED) */
-.contact-info-wrapper {
+/* Styles for the social links below the form */
+.contact-social-links {
+    margin-top: 3rem;
+}
+
+.contact-social-links h4 {
+     font-size: 1.5rem;
+     color: var(--color-gold);
+     margin-bottom: 1rem;
+}
+
+.social-links-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.social-links-list a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links-list a:hover {
+    color: var(--color-gold);
+}
+
+.social-links-list a i {
+    margin-right: 8px;
+    color: var(--color-gold);
+}
+
+/* Styles for the right column details */
+.contact-details-column {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.info-card {
-    background: transparent; /* Changed from #1c1c1c */
+.contact-details-column .info-card {
+    background: transparent;
     padding: 1rem;
     border-radius: 8px;
-    border: 1px solid #333; /* Added border */
+    border: 1px solid #333;
 }
 
-.info-card p {
+.contact-details-column .info-card p {
     color: #ccc;
     line-height: 1.5;
 }
 
-.contact-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: transparent; /* Changed from #2a2a2a */
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #333; /* Added border */
-    text-decoration: none;
-    color: #fff;
-    margin-bottom: 0.75rem;
-    transition: background-color 0.3s ease;
-}
 
-.contact-link:last-child {
-    margin-bottom: 0;
+/* --- FOOTER DIVIDER LINE --- */
+.footer-divider {
+    height: 1px;
+    background-color: #333; /* Dark gray line, matches footer border */
+    margin: 0; /* No extra space above/below */
+    border: none;
 }
-
-.contact-link:hover {
-    background-color: #1c1c1c; /* Darken on hover */
-}
-
-.contact-icon {
-    flex-shrink: 0;
-    width: 45px;
-    height: 45px;
-    background-color: rgba(188, 164, 116, 0.1); /* Subtle gold background */
-    border: 1px solid var(--color-gold); /* Gold border */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    color: var(--color-gold); /* Gold icon color */
-}
-
-.contact-link strong {
-    display: block;
-}
-
-.contact-link span {
-    color: #aaa;
-    font-size: 0.9rem;
-}
-
 
 /* --- FOOTER --- */
-footer {
-    padding: 3rem 0;
-    text-align: center;
-    color: #888;
-    font-size: 0.9rem;
-    border-top: 1px solid #333;
+.footer-dark {
+    background-color: var(--color-dark);
+    color: #aaa;
+    font-size: 0.95rem;
 }
 
-.payment-methods {
-    margin-bottom: 1rem;
+/* Top Social Bar */
+.footer-social-bar {
+    background-color: #0a0a0a;
+    padding: 1rem 0;
+    border-bottom: 1px solid #222;
 }
 
-.payment-methods p {
-    margin-bottom: 1rem;
+.footer-social-bar .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-social-bar a {
     color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.payment-methods img {
+.footer-social-bar a:hover {
+    color: var(--color-gold);
+}
+
+.footer-social-bar a i {
+    margin-right: 8px;
+    color: var(--color-gold);
+}
+
+/* Main Footer Content */
+.footer-main {
+    padding: 5rem 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-column h4 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Underline effect for titles */
+.footer-column h4::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-gold);
+    margin-top: 8px;
+}
+
+.footer-column .footer-logo {
+    max-width: 150px;
+    margin-bottom: 1.5rem;
+    filter: brightness(0) invert(1); /* Make logo white/light */
+}
+
+.footer-column p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-column ul a {
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-column ul a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.footer-column ul a i {
+    font-size: 0.7em;
+    margin-right: 8px;
+    color: var(--color-gold);
+}
+
+/* Payment Methods in Footer (Adjusted) */
+.footer-payment-methods {
+    margin-top: 1rem; /* Add margin to separate from h4 */
+}
+
+.footer-payment-methods img {
     display: inline-block;
     height: 24px;
-    margin: 0 10px;
-    /*filter: grayscale(1) invert(0.6); /* Makes logos a neutral gray */
+    margin-right: 8px; /* Slightly reduce margin */
+    vertical-align: middle; /* Align logos vertically */
+}
+.footer-payment-methods img:last-child {
+    margin-right: 0;
 }
 
-/* --- FEEDBACK SECTION --- */
-.feedback-form {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 3rem;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    text-align: left;
+/* Bottom Copyright Bar */
+.footer-bottom {
+    background-color: #000;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
-.feedback-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.feedback-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.feedback-form input, .feedback-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: inherit;
-}
-
-.feedback-form .btn {
-    width: 100%;
-}
 
 /* Star Rating Styles */
 .star-rating {
@@ -705,6 +778,31 @@ footer {
 .star-rating:hover input[type="radio"] ~ label:hover,
 .star-rating:hover input[type="radio"] ~ label:hover ~ label {
     color: var(--color-gold);
+}
+
+/* --- WhatsApp Floating Button --- */
+#whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px; 
+    width: 60px;
+    height: 60px;
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; /* Larger icon */
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 998; /* Slightly below scroll-to-top if they overlap */
+    transition: transform 0.3s ease;
+}
+
+#whatsapp-btn:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    background-color: #128C7E; /* Darker WhatsApp green */
 }
 
 /* --- RESPONSIVE STYLES --- */
@@ -745,104 +843,5 @@ footer {
     
     .form-row { flex-direction: column; gap: 1.5rem; }
     .design-form { padding: 2rem; }
-}
-
-/* --- Admin Login Modal --- */
-.modal-overlay {
-    position: fixed; /* This is the key change */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    backdrop-filter: blur(5px); /* Creates the blur effect */
-}
-
-.modal-overlay.hidden {
-    opacity: 0;
-    pointer-events: none; /* Prevents interaction when hidden */
-}
-
-.modal-content {
-    background-color: white;
-    padding: 2.5rem;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    width: 90%;
-    max-width: 450px;
-    position: relative;
-    transform: scale(1);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.modal-overlay.hidden .modal-content {
-    transform: scale(0.9);
-    opacity: 0; /* Add opacity transition for smoother hide */
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #aaa;
-    cursor: pointer;
-    line-height: 1;
-}
-
-.modal-content h3 {
-    text-align: center;
-    margin-bottom: 0.5rem;
-    font-size: 1.8rem;
-    font-family: 'Cormorant Garamond', serif;
-}
-
-.modal-subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 2rem;
-}
-
-.modal-content .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.modal-content label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #333;
-}
-
-.modal-content input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-}
-
-.modal-content .btn {
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-    font-size: 1rem;
-}
-
-.error-message {
-    color: #d93025;
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    min-height: 1.2em; /* Prevents layout jump */
 }
 

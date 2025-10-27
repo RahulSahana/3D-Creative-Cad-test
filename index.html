@@ -67,7 +67,6 @@
                     </li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" id="admin-login-btn">Admin</a></li>
                 </ul>
             </nav>
             <button id="menu-toggle"><i class="fas fa-bars"></i></button>
@@ -136,23 +135,6 @@
             </div>
         </section>
 
-        <!-- Custom Design Section -->
-        <section id="custom-design" class="content-section">
-            <div class="container">
-                <h2>Design Your Dream Piece</h2>
-                <p class="section-subtitle">Have a unique vision? Let's bring it to life together. Fill out the form below and I'll create a custom piece just for you.</p>
-                <form id="custom-design-form" class="design-form">
-                    <div class="form-row">
-                        <div class="form-group"><label for="name">Your Name*</label><input type="text" id="name" name="name" placeholder="Enter your name" required></div>
-                        <div class="form-group"><label for="email">Email Address*</label><input type="email" id="email" name="email" placeholder="your.email@example.com" required></div>
-                    </div>
-                    <div class="form-group"><label for="vision">Tell me about your vision*</label><textarea id="vision" name="vision" rows="5" placeholder="Describe your dream piece. What's the occasion? Any specific design elements you'd like to include?" required></textarea></div>
-                    <button type="submit" class="btn btn-primary">Submit Custom Design Request</button>
-                    <p class="required-note">*Required Fields</p>
-                </form>
-            </div>
-        </section>
-
         <!-- Testimonials Section -->
         <section id="testimonials" class="content-section">
             <div class="container">
@@ -177,95 +159,128 @@
                 </div>
             </div>
         </section>
+        
+        <!-- ==================== NEW CONTACT SECTION ==================== -->
+        <section id="contact" class="dark-section">
+            <div class="container contact-grid">
+                <!-- Left Column -->
+                <div class="contact-form-column">
+                    <h3>Send Me a Message</h3>
+                    <form id="contact-form" class="contact-form-main" action="https://formsubmit.co/your-other-email@example.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Contact Message!">
+                        <input type="hidden" name="_next" value="https://YOUR_WEBSITE_URL/thank-you-contact.html">
+                        <input type="hidden" name="_captcha" value="false">
 
-        <!-- Feedback Section -->
-        <section id="feedback" class="content-section">
-            <div class="container">
-                <h2>Leave Your Feedback</h2>
-                <p class="section-subtitle">Loved your piece? Share your experience to help us improve and inspire others.</p>
-                <form id="feedback-form" class="feedback-form">
-                    <div class="form-group"><label>How would you rate your experience?</label>
-                        <div class="star-rating">
-                            <input type="radio" id="5-stars" name="rating" value="5" /><label for="5-stars" class="fa fa-star"></label>
-                            <input type="radio" id="4-stars" name="rating" value="4" /><label for="4-stars" class="fa fa-star"></label>
-                            <input type="radio" id="3-stars" name="rating" value="3" /><label for="3-stars" class="fa fa-star"></label>
-                            <input type="radio" id="2-stars" name="rating" value="2" /><label for="2-stars" class="fa fa-star"></label>
-                            <input type="radio" id="1-star" name="rating" value="1" required /><label for="1-star" class="fa fa-star"></label>
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your inquiry..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+
+                    <!-- Connect With Me Links Below Form -->
+                    <div class="contact-social-links">
+                        <h4>Connect With Me</h4>
+                        <div class="social-links-list">
+                            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i> Pinterest</a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                         </div>
                     </div>
-                    <div class="form-group"><label for="feedback-name">Your Name (Optional)</label><input type="text" id="feedback-name" name="name" placeholder="Enter your name"></div>
-                    <div class="form-group"><label for="feedback-message">Your Feedback</label><textarea id="feedback-message" name="message" rows="5" placeholder="Tell us what you think..." required></textarea></div>
-                    <button type="submit" class="btn btn-primary">Submit Feedback</button>
-                </form>
-            </div>
-        </section>
-        
-        <!-- Contact Section -->
-        <section id="contact" class="dark-section">
-            <div class="container contact-container">
-                <div class="contact-form-wrapper">
-                    <h3>Send Me a Message</h3>
-                    <form id="contact-form">
-                        <div class="form-group"><label for="contact-name">Name</label><input type="text" id="contact-name" name="name" placeholder="Your name" required></div>
-                        <div class="form-group"><label for="contact-email">Email</label><input type="email" id="contact-email" name="email" placeholder="your.email@example.com" required></div>
-                        <div class="form-group"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your inquiry..." required></textarea></div>
-                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
-                    </form>
                 </div>
-                <div class="contact-info-wrapper">
-                    <div class="info-card"><h4>Connect With Me</h4>
-                        <a href="#" class="contact-link"><div class="contact-icon"><i class="fab fa-instagram"></i></div><div><strong>Instagram</strong><span>@sumankoley_jewelry</span></div></a>
-                        <a href="#" class="contact-link"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><div><strong>WhatsApp</strong><span>+91 12345 67890</span></div></a>
-                        <a href="#" class="contact-link"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><strong>Email</strong><span>contact@sumankoley.com</span></div></a>
+
+                <!-- Right Column -->
+                <div class="contact-details-column">
+                    <div class="info-card">
+                        <h4>Studio Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                           Saturday: 10:00 AM - 4:00 PM<br>
+                           Sunday: By Appointment Only</p>
                     </div>
-                    <div class="info-card"><h4>Studio Hours</h4><p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: By Appointment Only</p></div>
-                    <div class="info-card"><h4>Location</h4><p>123 Jewelry Lane<br>Design District<br>Kolkata, West Bengal<br>India</p></div>
+                    <div class="info-card">
+                        <h4>Location</h4>
+                        <p>123 Jewelry Lane<br>
+                           Design District<br>
+                           Kolkata, West Bengal<br> <!-- Updated Location -->
+                           India</p>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
+    <div class="footer-divider"></div>
 
-    <!-- This footer is now populated dynamically by js/main.js -->
-    <footer class="dark-section">
-        <div class="container">
-            <div class="footer-content">
-                <div class="payment-methods">
-                    <p>We Accept:</p>
-                    <img src="assets/images/visa.svg" alt="Visa">
-                    <img src="assets/images/mastercard.svg" alt="Mastercard">
-                    <img src="assets/images/rupay.svg" alt="Rupay">
-                    <img src="assets/images/upi.svg" alt="UPI">
+    <!-- Footer-->
+    <footer class="footer-dark">
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="container footer-grid">
+                <!-- Column 1: About -->
+                <div class="footer-column">
+                    <img src="assets/images/logo-footer.png" alt="Suman Koley Logo" class="footer-logo">
+                    <p>At Suman Koley Jewelry, we get complete creative solutions for your online business. We are providing jewelry photo rendering, high-end photo retouching, image editing, CAD design, and more.</p>
                 </div>
-                <div class="footer-text">
-                    <p>&copy; 2025 3D Creative Cad | All rights reserved.</p>
-                    <p>All pieces are handcrafted with ethically sourced materials.</p>
+
+                <!-- Column 2: Services -->
+                <div class="footer-column">
+                    <h4>SERVICES</h4>
+                    <ul>
+                        <li><a href="service-rendering.html"><i class="fa-solid fa-chevron-right"></i> Jewelry Rendering Services</a></li>
+                        <li><a href="service-animation.html"><i class="fa-solid fa-chevron-right"></i> 360° Turntable Animation</a></li>
+                        <li><a href="service-cad.html"><i class="fa-solid fa-chevron-right"></i> Jewelry CAD Designing</a></li>
+                        <li><a href="service-retouching.html"><i class="fa-solid fa-chevron-right"></i> Photo Retouching India</a></li>
+                    </ul>
                 </div>
+
+                <!-- Column 3: Useful Links -->
+                <div class="footer-column">
+                    <h4>USEFUL LINKS</h4>
+                    <ul>
+                        <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> FAQS</a></li>
+                        <li><a href="collections.html"><i class="fa-solid fa-chevron-right"></i> Collection</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Term & Conditions</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Payment Methods (UPDATED) -->
+                <div class="footer-column">
+                    <h4>WE ACCEPT</h4>
+                    <div class="footer-payment-methods">
+                        <img src="assets/images/visa.svg" alt="Visa">
+                        <img src="assets/images/mastercard.svg" alt="Mastercard">
+                        <img src="assets/images/rupay.svg" alt="Rupay">
+                        <img src="assets/images/upi.svg" alt="UPI">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Suman Koley Jewelry. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ==================== ADMIN LOGIN MODAL START ==================== -->
-    <div id="admin-modal-overlay" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button id="close-modal-btn" class="close-btn">&times;</button>
-            <h3>Admin Login</h3>
-            <p class="modal-subtitle">Please enter your credentials to access the dashboard.</p>
-            <form id="admin-login-form">
-                <div class="form-group">
-                    <label for="admin-email">Email Address</label>
-                    <input type="email" id="admin-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="admin-password">Password</label>
-                    <input type="password" id="admin-password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-                <p id="login-error-msg" class="error-message"></p>
-            </form>
-        </div>
-    </div>
-    <!-- ==================== ADMIN LOGIN MODAL END ==================== -->
+    
 
     <!-- Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -274,6 +289,16 @@
     <script src="js/supabase-init.js"></script>
     <script src="js/form.js"></script>
     <script src="js/main-scripts.js"></script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/911234567890?text=Hello%2C%20I%20have%20a%20question%20about%20your%20jewelry." 
+       id="whatsapp-btn" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 </body>
 </html>
 

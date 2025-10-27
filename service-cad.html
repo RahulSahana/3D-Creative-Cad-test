@@ -39,7 +39,6 @@
                     </li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="#" id="admin-login-btn">Admin</a></li>
                 </ul>
             </nav>
             <button id="menu-toggle" aria-label="Open Navigation Menu">
@@ -57,46 +56,64 @@
         <!-- Add detailed sections for CAD Design service here -->
     </main>
 
-    <!-- This footer is now populated dynamically by js/main.js -->
-    <footer class="dark-section">
-        <div class="container">
-            <div class="footer-content">
-                <div class="payment-methods">
-                    <p>We Accept:</p>
-                    <img src="assets/images/visa.svg" alt="Visa">
-                    <img src="assets/images/mastercard.svg" alt="Mastercard">
-                    <img src="assets/images/rupay.svg" alt="Rupay">
-                    <img src="assets/images/upi.svg" alt="UPI">
+    <div class="footer-divider"></div>
+
+    <!-- Footer-->
+    <footer class="footer-dark">
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="container footer-grid">
+                <!-- Column 1: About -->
+                <div class="footer-column">
+                    <img src="assets/images/logo-footer.png" alt="Suman Koley Logo" class="footer-logo">
+                    <p>At Suman Koley Jewelry, we get complete creative solutions for your online business. We are providing jewelry photo rendering, high-end photo retouching, image editing, CAD design, and more.</p>
                 </div>
-                <div class="footer-text">
-                    <p>&copy; 2025 Your Name Jewelry | All rights reserved.</p>
-                    <p>All pieces are handcrafted with ethically sourced materials.</p>
+
+                <!-- Column 2: Services -->
+                <div class="footer-column">
+                    <h4>SERVICES</h4>
+                    <ul>
+                        <li><a href="service-rendering.html"><i class="fa-solid fa-chevron-right"></i> Jewelry Rendering Services</a></li>
+                        <li><a href="service-animation.html"><i class="fa-solid fa-chevron-right"></i> 360° Turntable Animation</a></li>
+                        <li><a href="service-cad.html"><i class="fa-solid fa-chevron-right"></i> Jewelry CAD Designing</a></li>
+                        <li><a href="service-retouching.html"><i class="fa-solid fa-chevron-right"></i> Photo Retouching India</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Useful Links -->
+                <div class="footer-column">
+                    <h4>USEFUL LINKS</h4>
+                    <ul>
+                        <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> FAQS</a></li>
+                        <li><a href="collections.html"><i class="fa-solid fa-chevron-right"></i> Collection</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Term & Conditions</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Payment Methods (UPDATED) -->
+                <div class="footer-column">
+                    <h4>WE ACCEPT</h4>
+                    <div class="footer-payment-methods">
+                        <img src="assets/images/visa.svg" alt="Visa">
+                        <img src="assets/images/mastercard.svg" alt="Mastercard">
+                        <img src="assets/images/rupay.svg" alt="Rupay">
+                        <img src="assets/images/upi.svg" alt="UPI">
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <!-- ==================== ADMIN LOGIN MODAL START ==================== -->
-    <div id="admin-modal-overlay" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button id="close-modal-btn" class="close-btn">&times;</button>
-            <h3>Admin Login</h3>
-            <p class="modal-subtitle">Please enter your credentials to access the dashboard.</p>
-            <form id="admin-login-form">
-                <div class="form-group">
-                    <label for="admin-email">Email Address</label>
-                    <input type="email" id="admin-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="admin-password">Password</label>
-                    <input type="password" id="admin-password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-                <p id="login-error-msg" class="error-message"></p>
-            </form>
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Suman Koley Jewelry. All rights reserved.</p>
+            </div>
         </div>
-    </div>
-    <!-- ==================== ADMIN LOGIN MODAL END ==================== -->
+    </footer>
 
     <script src="js/main-scripts.js"></script>
 
