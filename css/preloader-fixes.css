@@ -1,7 +1,0 @@
-/* This file ensures both preloaders have a high z-index 
-  to appear on top of all other content, including the fixed header.
-*/
-
-#preloader {
-    z-index: 9999 !important;
-}
