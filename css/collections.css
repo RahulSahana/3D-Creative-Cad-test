@@ -13,7 +13,7 @@
     overflow: hidden; 
 }
 
-/* New styles for the video container and video element */
+/* Video Container Styles */
 .hero-video-container {
     position: absolute;
     top: 0;
@@ -23,7 +23,6 @@
     z-index: 1; 
 }
 
-/* This creates the dark overlay on top of the video */
 .hero-video-container::after {
     content: '';
     position: absolute;
@@ -31,147 +30,247 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(234, 231, 231, 0.5);
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly darkened overlay for text readability */
 }
 
 .hero-video-container video {
     width: 100%;
-    height: 99%;
-    object-fit:scale-down; 
-    background-color: #fff;
-    border-style:double;
-    
-}
-.hero-video-container video :focus {
-    outline: none;
+    height: 100%;
+    object-fit: cover; /* CHANGED: cover ensures it fills the background without borders */
 }
 
-/* Ensure content and scroll indicator are on top of the video */
 .hero-content, .scroll-down-indicator {
     position: relative;
     z-index: 2;
 }
 
-
 .collections-hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+    font-family: var(--font-heading);
 }
 
 .collections-hero p {
     font-size: 1.2rem;
-    color: var(--beige);
+    color: #fdfaf5; /* Lighter color for visibility on video */
 }
 
-/* Collection Grid Styling */
+/* --- Filter Buttons (The Slidable Bar) --- */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Wraps on desktop */
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+    font-weight: 500;
+    white-space: nowrap; /* Prevents text from breaking */
+}
+
+.filter-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+.filter-btn.active {
+    background-color: var(--color-dark);
+    color: #fff;
+    border-color: var(--color-dark);
+}
+
+/* --- Masonry Grid --- */
 .collection-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    /* Using Column count for true masonry layout */
+    column-count: 3;
+    column-gap: 1.5rem;
+    width: 100%;
 }
 
 .collection-item {
-    background: #fff;
-    border: 1px solid #eee;
+    break-inside: avoid; /* Prevents item from being cut between columns */
+    margin-bottom: 1.5rem; /* Space between vertical items */
+    background: white;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .collection-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-.collection-item img {
+/* Image Container */
+.item-image-container {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-image-container img {
+    width: 100%;
+    height: auto;
     display: block;
+    transition: transform 0.5s ease;
+}
+
+.collection-item:hover .item-image-container img {
+    transform: scale(1.05);
+}
+
+/* Wishlist Icon */
+.wishlist-icon-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    z-index: 5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.collection-item:hover .wishlist-icon-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.wishlist-icon-btn.added {
+    opacity: 1;
+    transform: scale(1);
+    background-color: var(--color-gold);
+    color: white;
 }
 
 .item-info {
-    padding: 1.5rem;
+    padding: 1.25rem;
     text-align: center;
 }
 
 .item-info h3 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
 }
 
 .item-info p {
     color: #666;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
-/* --- Optimized Image Loading Styles --- */
-
-.collection-item .image-container {
-    position: relative;
-    overflow: hidden;
-    /* Maintain aspect ratio before image loads */
-    aspect-ratio: 1 / 1; 
-    background-color: #f0ebe5; /* A subtle background color */
-}
-
-.lazy-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Start transparent for the fade-in effect */
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.lazy-image.loaded {
-    opacity: 1; /* Fade in the sharp image */
-}
-
-/* This creates the blur-up effect */
-.lazy-image:not(.loaded) {
-    /* Apply a blur filter to the tiny placeholder image */
-    filter: blur(20px);
-    /* Scale it slightly to avoid seeing blurred edges */
-    transform: scale(1.1);
-    opacity: 1; /* Make sure the blurred placeholder is visible */
-}
-
-
-
-/* Modal Styles (can be moved from style.css if only used here) */
+/* --- Modal Styles --- */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1001;
-    padding-top: 50px;
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal.active {
+    display: flex;
 }
 
 .modal-content {
-    margin: auto;
-    display: block;
-    width: auto;
-    height: 90%;
     max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .close-modal {
     position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
     cursor: pointer;
     transition: color 0.3s ease;
+    line-height: 1;
 }
+
 .close-modal:hover {
-    color: #bbb;
+    color: var(--color-gold);
+}
+
+/* --- RESPONSIVE STYLES --- */
+
+@media (max-width: 992px) {
+    .collection-grid {
+        column-count: 2; /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- Mobile Filter Bar (Slidable) --- */
+    .filter-buttons {
+        justify-content: flex-start; /* Align left so it scrolls from start */
+        flex-wrap: nowrap; /* Force single line */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        padding-bottom: 10px; /* Space for scrollbar */
+        
+        /* Smooth scrolling */
+        -webkit-overflow-scrolling: touch; 
+        
+        /* Hide Scrollbar visually but keep functionality */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE 10+ */
+        
+        /* Negative margin to span full width */
+        margin-left: -20px; 
+        margin-right: -20px;
+        padding-left: 20px; /* Padding to offset negative margin */
+        padding-right: 20px;
+    }
+    
+    .filter-buttons::-webkit-scrollbar { 
+        display: none; /* WebKit */
+    }
+
+    .filter-btn {
+        flex-shrink: 0; /* Prevent buttons from squishing */
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* --- Mobile Masonry --- */
+    .collection-grid {
+        column-count: 1; /* 1 column on mobile */
+    }
+
+    .collections-hero h1 {
+        font-size: 2.5rem;
+    }
 }

@@ -50,8 +50,8 @@
                             <a href="service-retouching.html">Photo Retouching</a>
                         </div>
                     </li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
             <button id="menu-toggle"><i class="fas fa-bars"></i></button>
@@ -64,7 +64,7 @@
         <!-- Collections Hero Section -->
         <section class="collections-hero">
             <div class="hero-video-container">
-                <video autoplay loop muted playsinline poster="assets/images/hero-bg.jpg">
+                <video autoplay loop muted playsinline poster="">
                     <source src="assets/videos/InShot_20251027_125014941.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -88,14 +88,12 @@
                     <button class="filter-btn" data-filter="earrings">Earrings</button>
                     <button class="filter-btn" data-filter="bracelets">Bracelets</button>
                 </div>
-                <div class="collection-grid">
+                <div class="collection-grid" id="collection-grid">
                     <!-- Item 1 -->
                     <div class="collection-item" data-category="rings">
                         <div class="image-container">
-                            <img src="assets/images/gallery/ring_solitaire-placeholder.jpg" 
-                                data-src="assets/images/gallery/ring_solitaire.webp" 
+                            <img src="assets/images/gallery/1a121b9b6d2ce7ba37684a679a3f2fd4.webp" 
                                 alt="Solitaire Diamond Ring" 
-                                class="lazy-image" 
                                 loading="lazy">
                         </div>
                         <div class="item-info">
@@ -107,10 +105,8 @@
                     <!-- Item 2 -->
                     <div class="collection-item" data-category="necklaces">
                         <div class="image-container">
-                            <img src="assets/images/gallery/necklace_pearl-placeholder.jpg" 
-                                data-src="assets/images/gallery/necklace_pearl.webp" 
+                            <img src="assets/images/gallery/2dcf365e1ee804ec8c9315ef103e49d1.webp" 
                                 alt="Pearl Pendant Necklace" 
-                                class="lazy-image" 
                                 loading="lazy">
                         </div>
                         <div class="item-info">
@@ -122,10 +118,8 @@
                     <!-- Item 3 -->
                     <div class="collection-item" data-category="earrings">
                         <div class="image-container">
-                            <img src="assets/images/gallery/earrings_hoop-placeholder.jpg" 
-                                data-src="assets/images/gallery/earrings_hoop.webp" 
+                            <img src="assets/images/gallery/4cb2b97643313e9fcfa7f15efb14933c.webp" 
                                 alt="Gold Hoop Earrings" 
-                                class="lazy-image" 
                                 loading="lazy">
                         </div>
                         <div class="item-info">
@@ -137,10 +131,8 @@
                     <!--  Item 4  -->
                     <div class="collection-item" data-category="bracelets">
                         <div class="image-container">
-                            <img src="assets/images/gallery/bracelet_cuff-placeholder.jpg" 
-                                data-src="assets/images/gallery/bracelet_cuff.webp" 
+                            <img src="assets/images/gallery/5e90b7468342f62dbd4a4f77f1468253.webp" 
                                 alt="Silver Cuff Bracelet" 
-                                class="lazy-image" 
                                 loading="lazy">
                         </div>
                         <div class="item-info">
@@ -152,10 +144,8 @@
                     <!--  Item 5  -->
                     <div class="collection-item" data-category="rings">
                         <div class="image-container">
-                            <img src="assets/images/gallery/ring_emerald-placeholder.jpg" 
-                                data-src="assets/images/gallery/ring_emerald.webp" 
+                            <img src="assets/images/gallery/6fbb82e26eed03417a936c554c7905c3.webp" 
                                 alt="Emerald Cut Ring" 
-                                class="lazy-image" 
                                 loading="lazy">
                         </div>
                         <div class="item-info">
@@ -167,10 +157,8 @@
                     <!-- Item 6  -->
                     <div class="collection-item" data-category="necklaces">
                         <div class="image-container">
-                            <img src="assets/images/gallery/necklace_locket-placeholder.jpg" 
-                                data-src="assets/images/gallery/necklace_locket.webp" 
+                            <img src="assets/images/gallery/8c2fef63b18f07f9867078c08df20f01.webp" 
                                 alt="Vintage Locket Necklace" 
-                                class="lazy-image" 
                                 loading="lazy">
                         </div>
                         <div class="item-info">
@@ -261,6 +249,7 @@
         </div>
     </footer>
     <script src="js/main-scripts.js"></script>
-    <script src="js/collections.js"></script> 
+    <script src="js/masonry.js"></script>
+    <script src="js/collections.js"></script>
 </body>
 </html>

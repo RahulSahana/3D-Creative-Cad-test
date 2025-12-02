@@ -5,10 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let userWishlist = new Set();
 
     async function initializePage() {
-        const { data: { session } } = await supabase.auth.getSession();
-        if (session) {
-            await fetchUserWishlist(session.user.id);
+        // If the page is used as a static demo (no Supabase loaded), avoid
+        // calling into the supabase client so we don't throw a ReferenceError.
+        if (typeof supabase === 'undefined') return;
+
+        try {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                await fetchUserWishlist(session.user.id);
+            }
+        } catch (err) {
+            // If auth or network fails, just continue to fetch jewelry if possible.
+            console.warn('Supabase session fetch failed', err);
         }
+
         await fetchJewelry();
     }
 
