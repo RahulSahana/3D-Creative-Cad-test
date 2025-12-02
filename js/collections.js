@@ -60,9 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
             itemElement.className = 'collection-item';
             itemElement.setAttribute('data-category', item.category);
 
+            // FIX: Use 'image-container' to match CSS and static HTML
             itemElement.innerHTML = `
-                <div class="item-image-container">
-                    <img src="${item.imageUrl}" alt="${item.title}">
+                <div class="image-container">
+                    <img src="${item.imageUrl}" alt="${item.title}" loading="lazy">
                     <button class="wishlist-icon-btn ${isWishlisted ? 'added' : ''}" data-id="${item.id}" aria-label="Add to wishlist">
                         <i class="fas fa-heart"></i>
                     </button>
@@ -93,9 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const { data: { session } } = await supabase.auth.getSession();
         if (!session) {
-            // Trigger the login modal from auth.js
-            const loginBtn = document.querySelector('.login-btn');
-            if (loginBtn) loginBtn.click();
+            // Trigger the login modal from admin-login.js (assuming shared class)
+            // Or alert user
+            alert("Please login to use the wishlist feature.");
             return;
         }
 
@@ -128,4 +129,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initializePage();
 });
-

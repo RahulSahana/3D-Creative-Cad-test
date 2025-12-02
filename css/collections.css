@@ -30,13 +30,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Slightly darkened overlay for text readability */
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .hero-video-container video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* CHANGED: cover ensures it fills the background without borders */
+    object-fit: cover; 
 }
 
 .hero-content, .scroll-down-indicator {
@@ -45,13 +45,13 @@
 }
 
 .collections-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+    font-size: clamp(2.5rem, 5vw, 4rem); 
     font-family: var(--font-heading);
 }
 
 .collections-hero p {
     font-size: 1.2rem;
-    color: #fdfaf5; /* Lighter color for visibility on video */
+    color: #fdfaf5; 
 }
 
 /* --- Filter Buttons (The Slidable Bar) --- */
@@ -59,7 +59,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap; /* Wraps on desktop */
+    flex-wrap: wrap; 
     margin-bottom: 3rem;
 }
 
@@ -72,7 +72,7 @@
     transition: all 0.3s ease;
     font-family: var(--font-body);
     font-weight: 500;
-    white-space: nowrap; /* Prevents text from breaking */
+    white-space: nowrap; 
 }
 
 .filter-btn:hover {
@@ -88,15 +88,14 @@
 
 /* --- Masonry Grid --- */
 .collection-grid {
-    /* Using Column count for true masonry layout */
     column-count: 3;
     column-gap: 1.5rem;
     width: 100%;
 }
 
 .collection-item {
-    break-inside: avoid; /* Prevents item from being cut between columns */
-    margin-bottom: 1.5rem; /* Space between vertical items */
+    break-inside: avoid; 
+    margin-bottom: 1.5rem; 
     background: white;
     border-radius: 8px;
     overflow: hidden;
@@ -104,6 +103,11 @@
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
+    
+    /* CRITICAL FIX: Ensure no fixed height or ratio forces stretching */
+    height: auto !important;
+    aspect-ratio: auto !important;
+    display: block; 
 }
 
 .collection-item:hover {
@@ -112,20 +116,25 @@
 }
 
 /* Image Container */
-.item-image-container {
+/* Unified class name: image-container */
+.image-container {
     width: 100%;
     position: relative;
     overflow: hidden;
+    background-color: #f0f0f0;
+    line-height: 0; /* Removes bottom spacing */
 }
 
-.item-image-container img {
+/* CRITICAL FIX: Force image to natural height */
+.image-container img {
     width: 100%;
-    height: auto;
+    height: auto !important; /* Let the height be natural */
+    object-fit: contain; /* Prevent cropping */
     display: block;
     transition: transform 0.5s ease;
 }
 
-.collection-item:hover .item-image-container img {
+.collection-item:hover .image-container img {
     transform: scale(1.05);
 }
 
