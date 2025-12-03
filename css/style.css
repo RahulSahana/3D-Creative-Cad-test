@@ -100,7 +100,7 @@ h4 { font-size: 1.2rem; }
 
 .main-nav a {
     text-decoration: none;
-    color: var(--color-text-light);
+    color: #ffffff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -118,7 +118,7 @@ h4 { font-size: 1.2rem; }
 #main-header.scrolled .main-nav a,
 #main-header.scrolled .logo,
 #main-header.scrolled #menu-toggle {
-    color: var(--color-text-dark); /* Dark text color */
+    color: #ffffff; /* White text color */
 }
 #main-header.scrolled .main-nav a:hover {
     color: var(--color-gold);
@@ -235,7 +235,11 @@ h4 { font-size: 1.2rem; }
     margin: 1rem 0 2rem;
 }
 
-.hero-buttons { display: flex; gap: 1rem; }
+.hero-buttons { 
+    display: flex; 
+    gap: 1rem;
+}
+
 
 .btn {
     padding: 12px 24px;
@@ -794,12 +798,16 @@ h4 { font-size: 1.2rem; }
         right: -100%;
         width: 70%;
         height: 100vh;
-        background: #fff;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.4) 100%);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         transition: right 0.4s ease-in-out;
+        padding-top: 50px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        color: #fff;
     }
     .main-nav.active { right: 0; }
     .main-nav ul { flex-direction: column; text-align: center; gap: 2rem; }
@@ -818,5 +826,73 @@ h4 { font-size: 1.2rem; }
     
     .form-row { flex-direction: column; gap: 1.5rem; }
     .design-form { padding: 2rem; }
+    .hero-buttons { justify-content: center;}
+
+    /* --- MOBILE DROPDOWN (ACCORDION STYLE) --- */
+    
+    /* 1. Reset the dropdown container */
+    .dropdown {
+        width: 100%;
+        display: block;
+        margin: 0;
+    }
+
+    /* 2. The Dropdown Content - Hidden State */
+    .dropdown-content {
+        position: static; /* Vital: This makes it push content down instead of floating */
+        float: none;
+        display: block; /* We keep it 'block' but hide it with height */
+        
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(188, 164, 116, 0.05); /* Subtle background to distinguish */
+        border-radius: 8px;
+        
+        /* The Animation Properties */
+        max-height: 0; /* Start closed with 0 height */
+        opacity: 0;
+        overflow: hidden; /* Hide content when height is 0 */
+        visibility: hidden;
+        padding: 0; /* No padding when closed */
+        margin: 0;
+        
+        transform: none; /* Remove desktop slide effect */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth slide animation */
+    }
+
+    /* 3. The Dropdown Content - Open State (Triggered by JS) */
+    .dropdown.active .dropdown-content {
+        max-height: 500px; /* Arbitrary large height to allow expansion */
+        opacity: 1;
+        visibility: visible;
+        padding: 10px 0; /* Add padding only when open */
+        margin-top: 10px;
+    }
+
+    /* 4. Disable Desktop Hover Behavior on Mobile */
+    .dropdown:hover .dropdown-content {
+        /* We overwrite the desktop hover rule so it doesn't pop up randomly */
+        display: block; 
+        /* But we rely on the .active class properties above to actually show it */
+    }
+
+    /* 5. Styling the links inside */
+    .dropdown-content a {
+        padding: 12px 20px;
+        font-size: 1rem;
+        color: #555;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .dropdown-content a:last-child {
+        border-bottom: none;
+    }
+
+    /* 6. Rotate the Arrow Icon */
+    .drop-btn i {
+        transition: transform 0.3s ease;
+    }
+    .dropdown.active .drop-btn i {
+        transform: rotate(180deg);
+    }
 }
 

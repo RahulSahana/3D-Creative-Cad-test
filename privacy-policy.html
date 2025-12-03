@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Retouching Services - 3D Creative Cad</title>
-    
-    <!-- Shared Styles -->
+    <title>Privacy Policy - 3D Creative Cad</title>
+    <!-- Shared Styles & Scripts Links (Same as above) -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dna-preloader.css">
-    <link rel="stylesheet" href="css/preloader-fixes.css">
-    <link rel="stylesheet" href="css/services.css">
+    
+    <style>
+        .text-page-hero { background-color: var(--color-dark); color: var(--color-text-light); padding: 8rem 0 4rem; text-align: center; }
+        .text-page-hero h1 { font-size: 3rem; margin-bottom: 1rem; font-family: var(--font-heading); }
+        .text-content { padding: 4rem 0; max-width: 800px; margin: 0 auto; color: #444; line-height: 1.8; }
+        .text-content h2 { margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem; color: var(--color-dark); }
+        .text-content p { margin-bottom: 1rem; }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .text-page-hero { padding: 6rem 0 3rem; }
+            .text-page-hero h1 { font-size: 2.5rem; }
+            .text-content { padding: 3rem 20px; } /* Maintain padding on mobile */
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Static Header (same across all pages) -->
+    <!-- Header (Same as other pages) -->
     <header id="main-header">
         <div class="container">
             <a href="index.html" class="logo">3D Creative Cad</a>
@@ -27,7 +37,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="collections.html">Collection</a></li>
                     <li class="dropdown">
-                        <a href="#" class="drop-btn">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <a href="#" class="dropbtn">Services <i class="fa-solid fa-chevron-down"></i></a>
                         <div class="dropdown-content">
                             <a href="service-rendering.html">Jewelry Rendering</a>
                             <a href="service-animation.html">360° Animation</a>
@@ -39,22 +49,31 @@
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button id="menu-toggle" aria-label="Open Navigation Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button id="menu-toggle"><i class="fas fa-bars"></i></button>
         </div>
     </header>
+
     <main>
-        <section class="service-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/hero-retouching.jpg');">
+        <section class="text-page-hero">
             <div class="container">
-                <h1>Professional Jewelry Photo Retouching</h1>
-                <p class="service-hero-subtitle">Enhancing Your Photos to Perfection for E-Commerce and Catalogs</p>
+                <h1>Privacy Policy</h1>
+                <p>How we protect and use your personal information.</p>
             </div>
         </section>
-        <!-- Add detailed sections for Photo Retouching service here -->
-    </main>
 
-    <div class="footer-divider"></div>
+        <section class="content-section">
+            <div class="container text-content">
+                <h2>1. Information Collection</h2>
+                <p>We collect information you provide directly to us, such as when you fill out a contact form, request a custom design, or sign up for our newsletter. This may include your name, email address, and phone number.</p>
+
+                <h2>2. Use of Information</h2>
+                <p>We use the information we collect to communicate with you about your inquiries and orders, and to send you updates about our services if you have opted in.</p>
+
+                <h2>3. Data Protection</h2>
+                <p>We implement a variety of security measures to maintain the safety of your personal information. We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties.</p>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer-->
     <footer class="footer-dark">
@@ -124,8 +143,6 @@
         </div>
     </footer>
 
-
     <script src="js/main-scripts.js"></script>
-
 </body>
 </html>

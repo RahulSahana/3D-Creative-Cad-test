@@ -83,4 +83,23 @@ document.addEventListener('DOMContentLoaded', function () {
             mainNav.classList.toggle('active');
         });
     }
+
+    // --- 5. MOBILE DROPDOWN ACCORDION LOGIC ---
+    // Select all elements that toggle a dropdown (e.g., the Services link)
+    const dropdownToggles = document.querySelectorAll('.dropdown > .dropbtn');
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            // Check if we are on mobile (using the same breakpoint as CSS)
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // Prevent the link from jumping to top
+                
+                // Find the parent <li> element
+                const parentLi = this.parentElement;
+                
+                // Toggle the 'active' class on the parent
+                parentLi.classList.toggle('active');
+            }
+        });
+    });
 });
