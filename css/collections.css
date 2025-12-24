@@ -1,4 +1,8 @@
 /* --- Collections Page Specific Styles --- */
+#main-header nav a {
+    color: black;
+    font-weight: 550;
+}
 
 /* Hero Section */
 .collections-hero {

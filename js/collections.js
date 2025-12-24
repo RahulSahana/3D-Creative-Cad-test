@@ -83,8 +83,27 @@ document.addEventListener('DOMContentLoaded', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             const category = button.dataset.filter;
-            const filteredItems = category === 'all' ? allJewelry : allJewelry.filter(item => item.category === category);
-            displayJewelry(filteredItems);
+
+            // If we have data from the server, use it to render filtered results.
+            if (allJewelry && allJewelry.length > 0) {
+                const filteredItems = category === 'all' ? allJewelry : allJewelry.filter(item => item.category === category);
+                displayJewelry(filteredItems);
+                return;
+            }
+
+            // Fallback for static/demo pages: filter existing DOM items
+            const domItems = collectionGrid.querySelectorAll('.collection-item');
+            domItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (category === 'all' || itemCategory === category) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Trigger a resize so a masonry recalculation (if present) runs
+            window.dispatchEvent(new Event('resize'));
         });
     });
 

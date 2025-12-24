@@ -1,6 +1,6 @@
 /* --- GLOBAL STYLES & VARIABLES --- */
 :root {
-    --color-gold: #bca474;
+    --color-gold: #ac8e43;
     --color-dark: #121212;
     --color-light: #fdfaf5;
     --color-text-dark: #333;
@@ -89,6 +89,7 @@ h4 { font-size: 1.2rem; }
     font-size: 1.8rem;
     color: var(--color-gold);
     text-decoration: none;
+    font-weight: bold;
 }
 #main-header.scrolled .logo { color: var(--color-gold); }
 
@@ -118,7 +119,7 @@ h4 { font-size: 1.2rem; }
 #main-header.scrolled .main-nav a,
 #main-header.scrolled .logo,
 #main-header.scrolled #menu-toggle {
-    color: #ffffff; /* White text color */
+    color: var(--color-gold); /* text color */
 }
 #main-header.scrolled .main-nav a:hover {
     color: var(--color-gold);

@@ -2,11 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Cache all necessary elements from the page ---
     const preloader = document.getElementById('preloader');
     const header = document.getElementById('main-header');
-    const animatedBranch = document.getElementById('animated-branch'); // Specific to index.html
-    const adminLoginBtn = document.getElementById('admin-login-btn');
-    const adminModalOverlay = document.getElementById('admin-modal-overlay');
     const closeModalBtn = document.getElementById('close-modal-btn');
-    const adminLoginForm = document.getElementById('admin-login-form');
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.querySelector('.main-nav');
 
